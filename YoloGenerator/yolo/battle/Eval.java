@@ -16,7 +16,7 @@ public class Eval {
 			System.out.println();
 			System.out.println(a.name + ", health: " + a.health);
 			System.out.println(b.name + ", health: " + b.health);
-			System.out.println(distance);
+			System.out.println("Distance" + distance);
 			
 			b.block(a.attack(distance));
 			a.block(b.attack(distance));
