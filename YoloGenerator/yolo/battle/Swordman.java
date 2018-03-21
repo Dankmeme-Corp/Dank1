@@ -1,9 +1,9 @@
 package yolo.battle;
 
-public class Swordman extends Unit implements Soldier {
+public class Swordman extends Unit {
 
 	public Swordman() {
-		
+		super();
 	}
 
 	public int attack() {
@@ -14,7 +14,7 @@ public class Swordman extends Unit implements Soldier {
 	}
 
 	public void block(int d) {
-		if(this.stamina < 50) {
+		if(this.stamina > 10) {
 			this.health = this.health - d;
 		}
 		
