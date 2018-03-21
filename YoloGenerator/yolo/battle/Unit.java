@@ -1,10 +1,20 @@
 package yolo.battle;
 
-public abstract class Unit extends Location{
+
+public abstract class Unit implements Soldier {
+
+	protected boolean alive = false;
 	protected int weight = 0;
+
 	protected int health = 100;
 	protected int stamina = 100;
 	protected String name;
+	
+	public Unit() {
+		alive = true;
+	}
+	
+	
 /*	
  * private int agililty;
 	private int strength;

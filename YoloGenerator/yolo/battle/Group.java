@@ -6,6 +6,13 @@ import java.util.Map;
 public abstract class Group {
 
 	
-	private Map unitList =  new HashMap();
+
+	private Map unitList = new HashMap();
+	
+	public Group() {
+		
+		
+	}
+
 	
 }
