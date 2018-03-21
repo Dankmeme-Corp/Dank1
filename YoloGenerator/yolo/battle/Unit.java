@@ -1,7 +1,7 @@
 package yolo.battle;
 
-public abstract class Unit {
-
+public abstract class Unit extends Location{
+	protected int weight = 0;
 	protected int health = 100;
 	protected int stamina = 100;
 	protected String name;
