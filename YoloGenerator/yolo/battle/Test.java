@@ -9,20 +9,15 @@ public class Test {
 		Unit ua;
 		Unit ub;
 		 
-		ua = new Archer();
-		ub = new Swordman();
-		System.out.print(ub.health);
-		((Swordman) ub).block(((Archer) ua).attack());;
-		System.out.print(ub.health);
+		ua = new Archer("Archer");
+		ub = new Swordman("Sworder");
 		
-		Map a = new HashMap();
-		Map b = new HashMap();
+		new Eval(ua, ub);
 		
-		a.put("0", ua);		
-		b.put("0", ub);
+		ua = new Archer("Archer");
+		ub = new Swordman("Sworder");
 		
-		new Eval(a, b);
-		
+		new Eval(ub, ua);
 	}
 
 }
