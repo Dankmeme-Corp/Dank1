@@ -10,6 +10,17 @@ public abstract class Unit implements Soldier {
 	protected int stamina = 100;
 	protected String name;
 	
+	
+	
+	Location location = new Location();
+
+	//  X = _
+	
+	//  Y = |
+	
+	
+	
+	
 	public Unit() {
 		alive = true;
 	}
