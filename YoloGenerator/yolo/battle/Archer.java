@@ -1,16 +1,21 @@
 package yolo.battle;
 
+import java.util.Random;
+
 public class Archer extends Unit {
 	
-	public Archer() {
+	public Archer(String name) {
 		super();
+		this.name = name;
 	}
 	
-	public int attack() {
-		
+	public int attack(int distance) {
+		Random r = new Random();
+		int Low = 10;
+		int High = 100;
 		
 		this.stamina = this.stamina - 10;
-		return (int)(Math.random() * ((this.stamina - 0 + 1) + 0));
+		return r.nextInt((High-distance*2)-Low) + Low;
 	}
 	
 	public void block(int d) {

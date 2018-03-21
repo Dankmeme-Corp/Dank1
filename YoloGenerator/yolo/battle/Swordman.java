@@ -1,16 +1,27 @@
 package yolo.battle;
 
+import java.util.Random;
+
 public class Swordman extends Unit {
 
-	public Swordman() {
+	public Swordman(String name) {
 		super();
+		this.name = name;
 	}
 
-	public int attack() {
-		// TODO Auto-generated method stub
+	public int attack(int distance) {	
+		Random r = new Random();
+		int Low = 10;
+		int High = 100;
+		
 		this.stamina = this.stamina - 10;
-
-		return 0 + (int)(Math.random() * ((this.stamina - 0) + 1));
+		
+		if(distance < 2) {
+			return r.nextInt(High-Low) + Low;
+		}
+		else {
+			return 0;
+		}
 	}
 
 	public void block(int d) {
