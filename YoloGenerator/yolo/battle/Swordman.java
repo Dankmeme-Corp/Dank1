@@ -1,6 +1,6 @@
 package yolo.battle;
 
-public class Swordman extends Soldier {
+public class Swordman extends Unit implements Soldier {
 
 	public Swordman() {
 		
@@ -9,7 +9,8 @@ public class Swordman extends Soldier {
 	public int attack() {
 		// TODO Auto-generated method stub
 		this.stamina = this.stamina - 10;
-		return 10;
+		
+		return 0 + (int)(Math.random() * ((this.stamina - 0) + 1));
 	}
 
 	public void block(int d) {
