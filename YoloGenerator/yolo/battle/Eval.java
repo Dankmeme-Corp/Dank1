@@ -1,8 +1,5 @@
 package yolo.battle;
 
-import java.util.Map;
-import java.util.Random;
-
 public class Eval {
 
 	private int distance;
@@ -22,19 +19,21 @@ public class Eval {
 			a.block(b.attack(distance));
 			
 			if(b.health <= 0){
-				b.alive = false;
+				b.killUnit();
 				System.out.println("Ded");
 				System.out.println("A winner is: " + a.name);
 				System.out.println("Health: " + a.health);
 			}
 			
 			if(a.health <= 0){
-				a.alive = false;
+				a.killUnit();
 				System.out.println("Ded");
 				System.out.println("A winner is: " + b.name);
 				System.out.println("Health: " + b.health);
 			}
-			distance = distance - 1;
+			if(distance>0) {
+				distance = distance - 1;
+			}
 		}
 	}
 	

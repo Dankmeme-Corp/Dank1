@@ -25,6 +25,9 @@ public abstract class Unit implements Soldier {
 		alive = true;
 	}
 	
+	public void killUnit() {
+		alive = false;
+	}
 	
 /*	
  * private int agililty;

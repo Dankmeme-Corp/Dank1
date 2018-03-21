@@ -12,10 +12,10 @@ public class Archer extends Unit {
 	public int attack(int distance) {
 		Random r = new Random();
 		int Low = 10;
-		int High = 100;
+		int High = 15;
 		
 		this.stamina = this.stamina - 10;
-		return r.nextInt((High-distance*2)-Low) + Low;
+		return r.nextInt(High-Low) + Low;
 	}
 	
 	public void block(int d) {

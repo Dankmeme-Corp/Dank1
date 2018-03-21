@@ -16,7 +16,7 @@ public class Swordman extends Unit {
 		
 		this.stamina = this.stamina - 10;
 		
-		if(distance < 2) {
+		if(distance < 3) {
 			return r.nextInt(High-Low) + Low;
 		}
 		else {
