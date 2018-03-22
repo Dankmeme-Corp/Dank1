@@ -12,14 +12,14 @@ public class Archer extends Unit {
 	public int attack(int distance) {
 		Random r = new Random();
 		int Low = 10;
-		int High = 15;
+		int High = 100;
 		
 		this.stamina = this.stamina - 10;
 		return r.nextInt(High-Low) + Low;
 	}
 	
 	public void block(int d) {
-		if(this.stamina > 10) {
+		if(this.stamina < 50) {
 			this.health = this.health - d;
 		}
 		

@@ -1,5 +1,7 @@
 package yolo.battle;
 
+import java.util.Random;
+
 public class Eval {
 
 	private int distance;
@@ -8,33 +10,34 @@ public class Eval {
 		
 		distance = 10;
 		
-		while(b.alive && a.alive) {
+		while(a.alive && b.alive) {
 
-			System.out.println();
-			System.out.println(a.name + ", health: " + a.health);
-			System.out.println(b.name + ", health: " + b.health);
-			System.out.println("Distance" + distance);
-			
-			b.block(a.attack(distance));
-			a.block(b.attack(distance));
-			
-			if(b.health <= 0){
-				b.killUnit();
-				System.out.println("Ded");
-				System.out.println("A winner is: " + a.name);
-				System.out.println("Health: " + a.health);
+			int select = (Math.random() <= 0.5) ? 1 : 2;;
+			System.out.println(select);
+			if(select==1) {
+				a.block(b.attack(distance));
 			}
 			
-			if(a.health <= 0){
-				a.killUnit();
-				System.out.println("Ded");
-				System.out.println("A winner is: " + b.name);
-				System.out.println("Health: " + b.health);
+			else if(select==2) {
+				b.block(a.attack(distance));
 			}
+			
+			if(a.health < 0 || b.health < 0) {
+				break;
+			}
+			
 			if(distance>0) {
 				distance = distance - 1;
 			}
 		}
+		
+		System.out.println(b.name + " Ded");
+		System.out.println("A winner is: " + a.name);
+		System.out.println("Health: " + a.health);
+
+		System.out.println(a.name + "Ded");
+		System.out.println("A winner is: " + b.name);
+		System.out.println("Health: " + b.health);
 	}
 	
 	

@@ -13,10 +13,10 @@ public class Swordman extends Unit {
 		Random r = new Random();
 		int Low = 10;
 		int High = 100;
-		
-		this.stamina = this.stamina - 10;
+	
 		
 		if(distance < 3) {
+			this.stamina = this.stamina - 50;
 			return r.nextInt(High-Low) + Low;
 		}
 		else {
@@ -24,8 +24,11 @@ public class Swordman extends Unit {
 		}
 	}
 
-	public void block(int d) {
-		if(this.stamina > 10) {
+	public void block(int d) {	
+		if(health-d<0){
+			this.alive = false;
+		}
+		if(this.stamina < 10) {
 			this.health = this.health - d;
 		}
 		
