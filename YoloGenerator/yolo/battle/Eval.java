@@ -13,7 +13,7 @@ public class Eval {
 		while(a.alive && b.alive) {
 
 			int select = (Math.random() <= 0.5) ? 1 : 2;;
-			System.out.println(select);
+
 			if(select==1) {
 				a.block(b.attack(distance));
 			}
